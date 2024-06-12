@@ -9,6 +9,6 @@ cases <- sfimport("inputs/2024-06-12_cases.csv")
 result <- cases |> 
   group_by(ProjectBatchBatchID) |> 
   summarise(
-    address_list = list(Address),
-    concatenated_data = str_c(ProjectBatchProjectSummary, " [", str_flatten(address_list, collapse = ", "), "]")
+    address_list = str_c(Address, collapse = ", "),
+    concatenated_data = str_c(ProjectBatchProjectSummary, " - Addresses Removed [", address_list, "]")
     )
