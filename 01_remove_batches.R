@@ -22,8 +22,11 @@ fn_create_dirs <- function(dirs_list=list_dirs_to_create) {
 
 fn_create_dirs(list_dirs_to_create)
 
+#add latest function file
 
-cases <- sfimport("input/2024-06-12_cases.csv")
+cases <- dlbaR::latest_file("*cases.csv","input/")
+
+cases <- sfimport(cases)
 
 
 # Group the data frame by the 'group' variable and concatenate 'value' into a list
