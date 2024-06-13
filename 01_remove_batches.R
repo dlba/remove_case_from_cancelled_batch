@@ -1,6 +1,7 @@
 library(dplyr)
 library(dlbaR)
 library(stringr)
+library(readr)
 
 
 #create list of dir names
